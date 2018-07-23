@@ -1,5 +1,6 @@
 const request = require('request');
 const cheerio = require('cheerio');
+const fs = require('fs');
 
 const url = 'http://www.adong.gdansk.pl/menu/gdansk';
 
@@ -25,5 +26,10 @@ request(url, function (error, response, html) {
     menu.push(dish);
   })
 
-  console.log(menu);
+  fs.writeFile(`menu.json`, JSON.stringify(menu, null, 2), function (err) {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log(`Menu successfully scrapped! - Check your project directory for the menu.json file`);
+  })
 });
