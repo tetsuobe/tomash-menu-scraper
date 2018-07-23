@@ -1,9 +1,20 @@
 {
     "name": "tomash-menu-scraper",
+    "description": "Menu scraper for tomash",
     "version": "1.0.0",
     "author": {
         "name": "tetsuobe",
         "email": "tetsuobe+tomash@gmail.com"
     },
-    "license": "ISC"
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tetsuobe/tomash-menu-scraper"
+    },
+    "devDependencies": {
+        "eslint": "5.2.0"
+    },
+    "dependencies": {
+        "request": "2.87.0"
+    }
 }
