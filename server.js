@@ -1,6 +1,7 @@
 const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs');
+const menuWritter = require('./menuWritter')({ fs });
 const adongScraper = require('./scrapers/adong');
 
 const restaurant = {
@@ -14,11 +15,5 @@ request(restaurant.url, function (error, response, html) {
   }
 
   const menu = adongScraper({ cheerio, html});
-
-  fs.writeFile(`menu.json`, JSON.stringify(menu, null, 2), function (err) {
-    if (err) {
-      console.error(err.message);
-    }
-    console.log(`Menu successfully scrapped! - Check your project directory for the menu.json file`);
-  })
+  menuWritter.write({ menu, name: restaurant.name });
 });
