@@ -8,6 +8,11 @@ const restaurants = [
     name: 'adong',
     fullName: 'Orientalny Bar A-Dong',
     url: 'http://www.adong.gdansk.pl/menu/gdansk',
+  },
+  {
+    name: 'surfburger',
+    fullName: 'SurfBurger',
+    url: 'http://surfburger.pl',
   }
 ];
 
@@ -25,7 +30,7 @@ function scrape(restaurantName) {
     }
   
     const menu = require(`./scrapers/${restaurant.name}`)({ cheerio, html});
-    menuWritter.write({ menu, restaurant });
+    menuWritter.write({ menu, restaurant });  
   })
 }
 
