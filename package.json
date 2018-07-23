@@ -1,0 +1,9 @@
+{
+    "name": "tomash-menu-scraper",
+    "version": "1.0.0",
+    "author": {
+        "name": "tetsuobe",
+        "email": "tetsuobe+tomash@gmail.com"
+    },
+    "license": "ISC"
+}
