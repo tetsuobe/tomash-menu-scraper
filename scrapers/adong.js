@@ -16,5 +16,13 @@ module.exports = function ({ cheerio, html }) {
     menu.push(dish);
   })
 
+  menu.sort(function (a, b) {
+    if (a.position < b.position)
+      return -1;
+    if (a.position > b.position)
+      return 1;
+    return 0;
+  })
+
   return menu;
 };
