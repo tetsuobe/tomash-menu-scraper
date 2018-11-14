@@ -1,0 +1,3 @@
+[submodule "tomash"]
+	path = tomash
+	url = https://github.com/wmgda/tomash
