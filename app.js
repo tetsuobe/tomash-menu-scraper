@@ -2,6 +2,7 @@ const request = require('request')
 const cheerio = require('cheerio')
 const fs = require('fs')
 const menuWritter = require('./menuWritter')({ fs })
+const config = require('./config')
 
 const restaurants = [
   {
@@ -22,6 +23,7 @@ const restaurantsArray = restaurants.reduce(function (map, restaurant) {
 }, {})
 
 function scrape (restaurantName) {
+  const notifier = require('./notifier')({ config })
   const restaurant = restaurantsArray[restaurantName.toLowerCase()] || null
   if (restaurant == null) {
     throw Error('Unknown restaurant.')
@@ -34,6 +36,7 @@ function scrape (restaurantName) {
 
     const menu = require(`./scrapers/${restaurant.name}`)({ cheerio, html })
     menuWritter.write({ menu, restaurant })
+    notifier.push(restaurant.fullName)
   })
 }
 

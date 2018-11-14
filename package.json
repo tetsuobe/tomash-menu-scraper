@@ -12,10 +12,18 @@
         "url": "https://github.com/tetsuobe/tomash-menu-scraper"
     },
     "devDependencies": {
+        "eslint": "^5.9.0",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-node": "^8.0.0",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
         "standard": "11.0.1"
     },
     "dependencies": {
+        "@slack/client": "^4.8.0",
         "cheerio": "1.0.0-rc.2",
+        "dotenv": "^6.1.0",
         "request": "2.87.0"
     },
     "scripts": {
